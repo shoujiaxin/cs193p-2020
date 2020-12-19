@@ -8,7 +8,7 @@ Demos, assignments & notes of Stanford University's course CS193p
 
 - [Lecture 2: MVVM and the Swift Type System](Notes/Lecture%202.md)
 
-- Lecture 3: Reactive UI Protocols Layout
+- [Lecture 3: Reactive UI Protocols Layout](Notes/Lecture%203.md)
 
 - Lecture 4: Grid enum Optionals
 

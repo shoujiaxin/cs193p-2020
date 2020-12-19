@@ -69,17 +69,17 @@ struct Array<Element> {
 - Examples:
 
   ```swift
-  (Int, Int) -> Bool   // takes two `Int`s and returns a `Bool`
-  (Double) -> Void     // takes a `Double` and returns nothing
-  () -> Array<String>  // takes no arguments and returns an `Array` of `String`s
+  (Int, Int) -> Bool   // takes two Ints and returns a Bool
+  (Double) -> Void     // takes a Double and returns nothing
+  () -> Array<String>  // takes no arguments and returns an Array of Strings
   () -> Void           // takes no arguments and returns nothing
   ```
 
   All of the above are just types. No different than `Bool` or `View` or `Array<Int>`.
 
   ```swift
-  var foo: (Double) -> Void  // `foo`'s type: function that takes a `Double`, returns nothing
-  func doSomething(what: () -> Bool)  // `what`'s type: function takes nothing, returns `Bool`
+  var foo: (Double) -> Void  // foo's type: function that takes a Double, returns nothing
+  func doSomething(what: () -> Bool)  // what's type: function takes nothing, returns Bool
   ```
 
 - Closures
