@@ -1,4 +1,4 @@
-# Lecture 2
+# Lecture 2: MVVM and the Swift Type System
 
 - [1. MVVM (Model - View - ViewModel)](#1-mvvm-model---view---viewmodel)
 - [2. Varieties of Types](#2-varieties-of-types)
