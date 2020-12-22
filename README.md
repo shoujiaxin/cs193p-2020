@@ -10,7 +10,7 @@ Demos, assignments & notes of Stanford University's course CS193p
 
 - [Lecture 3: Reactive UI Protocols Layout](Notes/Lecture%203.md)
 
-- Lecture 4: Grid enum Optionals
+- [Lecture 4: Grid enum Optionals](Notes/Lecture%204.md)
 
 - Lecture 5: ViewBuilder Shape ViewModifier
 

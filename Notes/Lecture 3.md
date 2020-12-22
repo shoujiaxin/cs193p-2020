@@ -212,3 +212,9 @@ struct GeometryProxy {
   ```swift
   ZStack { ... }.edgesIgnoringSafeArea([.top])  // draw in "safe area" on top edge
   ```
+
+---
+
+←Previous: [Lecture 2: MVVM and the Swift Type System](Lecture%202.md)
+
+→Next: [Lecture 4: Grid enum Optionals](Lecture%204.md)

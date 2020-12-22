@@ -83,3 +83,7 @@ struct Array<Element> {
   ```
 
 - Closures
+
+---
+
+→Next: [Lecture 3: Reactive UI Protocols Layout](Lecture%203.md)
