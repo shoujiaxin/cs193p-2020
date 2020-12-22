@@ -35,9 +35,9 @@ struct CardView: View {
                     RoundedRectangle(cornerRadius: cornerRadius)
                         .stroke(lineWidth: edgelineWidth)
                     Text(card.content)
-                } else {
+                } else if !card.isMatched {
                     // Back
-                    RoundedRectangle(cornerRadius: cornerRadius)
+                    RoundedRectangle(cornerRadius: 10)
                         .fill()
                 }
             }
