@@ -11,16 +11,18 @@ struct ContentView: View {
     var viewModel: EmojiMemoryGame
 
     var body: some View {
+        let font = viewModel.cards.count == 10 ? Font.headline : Font.largeTitle // Assignment 1.5
         HStack {
             ForEach(viewModel.cards) { card in
                 CardView(card: card).onTapGesture {
                     viewModel.choose(card: card)
                 }
+                .aspectRatio(2 / 3, contentMode: .fit) // Assignment 1.3
             }
         }
         .padding()
         .foregroundColor(.orange)
-        .font(.largeTitle)
+        .font(font)
     }
 }
 
