@@ -12,7 +12,7 @@ Demos, assignments & notes of Stanford University's course CS193p
 
 - [Lecture 4: Grid enum Optionals](Notes/Lecture%204.md)
 
-- Lecture 5: ViewBuilder Shape ViewModifier
+- [Lecture 5: ViewBuilder Shape ViewModifier](Notes/Lecture%205.md)
 
 - Lecture 6: Animation
 
