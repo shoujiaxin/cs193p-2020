@@ -56,3 +56,5 @@
 ---
 
 ←Previous: [Lecture 4: Grid enum Optionals](Lecture%204.md)
+
+→Next: [Lecture 6: Animation](Lecture%206.md)

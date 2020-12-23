@@ -14,7 +14,7 @@ Demos, assignments & notes of Stanford University's course CS193p
 
 - [Lecture 5: ViewBuilder Shape ViewModifier](Notes/Lecture%205.md)
 
-- Lecture 6: Animation
+- [Lecture 6: Animation](Notes/Lecture%206.md)
 
 - Lecture 7: Multithreading EmojiArt
 
