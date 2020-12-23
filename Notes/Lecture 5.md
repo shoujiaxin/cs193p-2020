@@ -2,6 +2,8 @@
 
 - [1. `@ViewBuilder`](#1-viewbuilder)
 - [2. `Shape`](#2-shape)
+- [3. Animation](#3-animation)
+- [4. ViewModifiers](#4-viewmodifiers)
 
 ## 1. `@ViewBuilder`
 
@@ -31,6 +33,25 @@
 - A `protocol` that inherits from View.
 
 - By default, Shapes draw themselves by filling with the current foreground color.
+
+## 3. Animation
+
+- One way to do animation is by animating a `Shape`
+
+- The other way to do animation is to animate Views via their `ViewModifiers`
+
+## 4. ViewModifiers
+
+- `ViewModifier` is a `protocol` and has one function in it. This function's only job is to create a new `View` based on the thing passed to it.
+
+  ```swift
+  protocol ViewModifier {
+      associatedtype Content
+      func body(content: Content) -> some View {
+          return some View that represents a modification of content
+      }
+  }
+  ```
 
 ---
 
