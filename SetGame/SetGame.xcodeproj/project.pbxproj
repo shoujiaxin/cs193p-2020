@@ -11,6 +11,8 @@
 		2957FDD92594DAD100E52560 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957FDD82594DAD100E52560 /* ContentView.swift */; };
 		2957FDDB2594DAD300E52560 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2957FDDA2594DAD300E52560 /* Assets.xcassets */; };
 		2957FDDE2594DAD300E52560 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2957FDDD2594DAD300E52560 /* Preview Assets.xcassets */; };
+		2957FDE72595A22400E52560 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957FDE62595A22400E52560 /* Card.swift */; };
+		2957FDEE2595A4E600E52560 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957FDED2595A4E600E52560 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		2957FDDA2594DAD300E52560 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2957FDDD2594DAD300E52560 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2957FDDF2594DAD300E52560 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2957FDE62595A22400E52560 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		2957FDED2595A4E600E52560 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			children = (
 				2957FDD62594DAD100E52560 /* SetGameApp.swift */,
 				2957FDD82594DAD100E52560 /* ContentView.swift */,
+				2957FDF02595A51E00E52560 /* Models */,
 				2957FDDA2594DAD300E52560 /* Assets.xcassets */,
 				2957FDDF2594DAD300E52560 /* Info.plist */,
 				2957FDDC2594DAD300E52560 /* Preview Content */,
@@ -67,6 +72,15 @@
 				2957FDDD2594DAD300E52560 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2957FDF02595A51E00E52560 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2957FDE62595A22400E52560 /* Card.swift */,
+				2957FDED2595A4E600E52560 /* Game.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2957FDEE2595A4E600E52560 /* Game.swift in Sources */,
 				2957FDD92594DAD100E52560 /* ContentView.swift in Sources */,
+				2957FDE72595A22400E52560 /* Card.swift in Sources */,
 				2957FDD72594DAD100E52560 /* SetGameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
