@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		291D89BD2595B8D10071EF5C /* CardShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291D89BC2595B8D10071EF5C /* CardShape.swift */; };
 		2957FDD72594DAD100E52560 /* SetGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957FDD62594DAD100E52560 /* SetGameApp.swift */; };
 		2957FDD92594DAD100E52560 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957FDD82594DAD100E52560 /* ContentView.swift */; };
 		2957FDDB2594DAD300E52560 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2957FDDA2594DAD300E52560 /* Assets.xcassets */; };
 		2957FDDE2594DAD300E52560 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2957FDDD2594DAD300E52560 /* Preview Assets.xcassets */; };
 		2957FDE72595A22400E52560 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957FDE62595A22400E52560 /* Card.swift */; };
 		2957FDEE2595A4E600E52560 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957FDED2595A4E600E52560 /* Game.swift */; };
+		2957FDF62595A6EA00E52560 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957FDF52595A6EA00E52560 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		291D89BC2595B8D10071EF5C /* CardShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardShape.swift; sourceTree = "<group>"; };
 		2957FDD32594DAD100E52560 /* SetGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SetGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2957FDD62594DAD100E52560 /* SetGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameApp.swift; sourceTree = "<group>"; };
 		2957FDD82594DAD100E52560 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		2957FDDF2594DAD300E52560 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2957FDE62595A22400E52560 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		2957FDED2595A4E600E52560 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		2957FDF52595A6EA00E52560 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 				2957FDD62594DAD100E52560 /* SetGameApp.swift */,
 				2957FDD82594DAD100E52560 /* ContentView.swift */,
 				2957FDF02595A51E00E52560 /* Models */,
+				2957FDF42595A6DC00E52560 /* Views */,
 				2957FDDA2594DAD300E52560 /* Assets.xcassets */,
 				2957FDDF2594DAD300E52560 /* Info.plist */,
 				2957FDDC2594DAD300E52560 /* Preview Content */,
@@ -81,6 +86,15 @@
 				2957FDED2595A4E600E52560 /* Game.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2957FDF42595A6DC00E52560 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2957FDF52595A6EA00E52560 /* CardView.swift */,
+				291D89BC2595B8D10071EF5C /* CardShape.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,7 +169,9 @@
 				2957FDEE2595A4E600E52560 /* Game.swift in Sources */,
 				2957FDD92594DAD100E52560 /* ContentView.swift in Sources */,
 				2957FDE72595A22400E52560 /* Card.swift in Sources */,
+				291D89BD2595B8D10071EF5C /* CardShape.swift in Sources */,
 				2957FDD72594DAD100E52560 /* SetGameApp.swift in Sources */,
+				2957FDF62595A6EA00E52560 /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

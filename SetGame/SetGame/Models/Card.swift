@@ -5,31 +5,39 @@
 //  Created by Jiaxin Shou on 2020/12/25.
 //
 
-import Foundation
+import SwiftUI
 
 struct Card {
-    enum NumberOfShapes: CaseIterable {
-        case one
+    enum NumberOfShapes: Int, CaseIterable {
+        case one = 1
         case two
         case three
     }
 
     enum Shape: CaseIterable {
-        case diamond
-        case squiggle
-        case oval
+        case diamond // 菱形
+        case squiggle // 波浪形
+        case oval // 椭圆形
     }
 
     enum Shading: CaseIterable {
-        case solid
-        case striped
-        case open
+        case solid // 实心
+        case striped // 条纹
+        case open // 空心
     }
 
     enum Color: CaseIterable {
         case red
         case green
         case purple
+
+        func toViewColor() -> SwiftUI.Color {
+            switch self {
+            case .red: return .red
+            case .green: return .green
+            case .purple: return .purple
+            }
+        }
     }
 
     var numberOfShapes: NumberOfShapes
