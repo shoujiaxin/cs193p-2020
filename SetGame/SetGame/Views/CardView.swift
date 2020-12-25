@@ -10,6 +10,10 @@ import SwiftUI
 struct CardView: View {
     var card: Card
 
+    init(of card: Card) {
+        self.card = card
+    }
+
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: cornerRadius)
@@ -18,11 +22,13 @@ struct CardView: View {
             VStack {
                 ForEach(0 ..< card.numberOfShapes.rawValue) { _ in
                     CardShape(of: card)
+                        .shading()
                 }
             }
             .padding()
             .foregroundColor(card.color.toViewColor())
         }
+        .aspectRatio(0.65, contentMode: .fit)
     }
 
     // MARK: - Drawing Constants
@@ -39,7 +45,7 @@ struct CardView_Previews: PreviewProvider {
             shading: Card.Shading.allCases.randomElement()!,
             color: Card.Color.allCases.randomElement()!
         )
-        return CardView(card: card)
+        return CardView(of: card)
             .previewLayout(.fixed(width: 130, height: 200))
     }
 }

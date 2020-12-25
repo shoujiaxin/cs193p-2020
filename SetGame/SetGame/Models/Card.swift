@@ -7,27 +7,34 @@
 
 import SwiftUI
 
-struct Card {
+struct Card: Identifiable {
+    var id: Int {
+        numberOfShapes.rawValue * 1000 +
+            shape.rawValue * 100 +
+            shading.rawValue * 10 +
+            color.rawValue
+    }
+
     enum NumberOfShapes: Int, CaseIterable {
         case one = 1
         case two
         case three
     }
 
-    enum Shape: CaseIterable {
-        case diamond // 菱形
+    enum Shape: Int, CaseIterable {
+        case diamond = 1 // 菱形
         case squiggle // 波浪形
         case oval // 椭圆形
     }
 
-    enum Shading: CaseIterable {
-        case solid // 实心
+    enum Shading: Int, CaseIterable {
+        case solid = 1 // 实心
         case striped // 条纹
         case open // 空心
     }
 
-    enum Color: CaseIterable {
-        case red
+    enum Color: Int, CaseIterable {
+        case red = 1
         case green
         case purple
 

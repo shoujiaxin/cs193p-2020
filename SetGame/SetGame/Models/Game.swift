@@ -25,4 +25,12 @@ struct Game {
             }
         }
     }
+
+    mutating func dealCards(_ num: Int) {
+        while cardsOnTable.count < num {
+            let index = Int.random(in: 0 ..< cardsInDeck.count)
+            let card = cardsInDeck.remove(at: index)
+            cardsOnTable.append(card)
+        }
+    }
 }
