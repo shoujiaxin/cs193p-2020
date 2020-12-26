@@ -13,11 +13,17 @@ struct ContentView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Remaining: \(setGame.numberOfRemainingCards)")
-
+                VStack(alignment: .leading) {
+                    Text("Remaining: \(setGame.numberOfRemainingCards)")
+                    Text("Score: \(setGame.score)")
+                }
                 Spacer()
 
-                Text("Score: \(setGame.score)")
+                Button("New Game") {
+                    withAnimation(.easeInOut) {
+                        setGame.newGame()
+                    }
+                }
             }
             .padding()
             .font(.headline)
@@ -25,19 +31,22 @@ struct ContentView: View {
             Grid(setGame.cards) { card in
                 CardView(of: card)
                     .padding(6)
+                    .transition(AnyTransition.offset(x: CGFloat.random(in: -500 ... 500), y: CGFloat.random(in: -500 ... 500)))
                     .onTapGesture {
-                        setGame.select(card: card)
+                        withAnimation(.easeInOut) {
+                            setGame.select(card: card)
+                        }
                     }
             }
             .onAppear {
-                withAnimation(.easeInOut) {
+                withAnimation(.easeInOut(duration: 2)) {
                     setGame.dealCards(to: 12)
                 }
             }
 
-            Button("New Game") {
+            Button("No Set") {
                 withAnimation(.easeInOut) {
-                    setGame.newGame()
+                    setGame.dealCards(to: setGame.cards.count + 3)
                 }
             }
         }

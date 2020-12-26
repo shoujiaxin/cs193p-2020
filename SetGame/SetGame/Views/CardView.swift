@@ -36,6 +36,6 @@ struct CardView_Previews: PreviewProvider {
             color: .red
         )
         return CardView(of: card)
-            .previewLayout(.fixed(width: 130, height: 100))
+            .previewLayout(.fixed(width: 130, height: 200))
     }
 }
