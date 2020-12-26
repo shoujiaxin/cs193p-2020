@@ -51,4 +51,6 @@ struct Card: Identifiable {
     var shape: Shape
     var shading: Shading
     var color: Color
+
+    var isSelected: Bool = false
 }

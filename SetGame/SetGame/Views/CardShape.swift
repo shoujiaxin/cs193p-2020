@@ -15,9 +15,9 @@ struct CardShape: Shape {
     }
 
     func path(in rect: CGRect) -> Path {
-        let shapeWidth = rect.width
-        let shapeHeight = shapeWidth / aspectRatio
-        let originX = rect.origin.x
+        let shapeWidth = rect.width > rect.height * aspectRatio ? rect.height * aspectRatio : rect.width
+        let shapeHeight = rect.width > rect.height * aspectRatio ? rect.height : shapeWidth / aspectRatio
+        let originX = (rect.width - shapeWidth) / 2
         let originY = (rect.height - shapeHeight) / 2
         let shapeRect = CGRect(x: originX, y: originY, width: shapeWidth, height: shapeHeight)
 

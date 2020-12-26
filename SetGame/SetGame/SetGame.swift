@@ -16,9 +16,26 @@ class SetGame: ObservableObject {
         game.cardsOnTable
     }
 
+    var numberOfRemainingCards: Int {
+        game.cardsInDeck.count
+    }
+
+    var score: Int {
+        game.score
+    }
+
     // MARK: - Intent(s)
 
-    func dealCards(_ num: Int) {
-        game.dealCards(num)
+    func dealCards(to num: Int) {
+        game.dealCards(to: num)
+    }
+
+    func select(card: Card) {
+        game.select(card: card)
+    }
+
+    func newGame() {
+        game = Game()
+        game.dealCards(to: 12)
     }
 }

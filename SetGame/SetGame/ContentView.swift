@@ -12,17 +12,34 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: Int(ceil(Double(setGame.cards.count) / 4)))) {
-                ForEach(setGame.cards) { card in
-                    CardView(of: card)
-                }
+            HStack {
+                Text("Remaining: \(setGame.numberOfRemainingCards)")
+
+                Spacer()
+
+                Text("Score: \(setGame.score)")
             }
             .padding()
+            .font(.headline)
 
-            Spacer()
-        }
-        .onAppear {
-            setGame.dealCards(12)
+            Grid(setGame.cards) { card in
+                CardView(of: card)
+                    .padding(6)
+                    .onTapGesture {
+                        setGame.select(card: card)
+                    }
+            }
+            .onAppear {
+                withAnimation(.easeInOut) {
+                    setGame.dealCards(to: 12)
+                }
+            }
+
+            Button("New Game") {
+                withAnimation(.easeInOut) {
+                    setGame.newGame()
+                }
+            }
         }
     }
 }
