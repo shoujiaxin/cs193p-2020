@@ -15,6 +15,7 @@ struct CardShape: Shape {
     }
 
     func path(in rect: CGRect) -> Path {
+        // Assignment 3.5
         let shapeWidth = rect.width > rect.height * aspectRatio ? rect.height * aspectRatio : rect.width
         let shapeHeight = rect.width > rect.height * aspectRatio ? rect.height : shapeWidth / aspectRatio
         let originX = (rect.width - shapeWidth) / 2

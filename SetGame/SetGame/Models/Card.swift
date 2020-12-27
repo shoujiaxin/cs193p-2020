@@ -52,5 +52,13 @@ struct Card: Identifiable {
     var shading: Shading
     var color: Color
 
-    var isSelected: Bool = false
+    var isSelected: Bool = false {
+        willSet {
+            if !newValue {
+                isMatch = nil
+            }
+        }
+    }
+
+    var isMatch: Bool?
 }

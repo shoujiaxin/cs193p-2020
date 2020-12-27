@@ -19,38 +19,60 @@ struct ContentView: View {
                 }
                 Spacer()
 
+                // Assignment 3.12
                 Button("New Game") {
-                    withAnimation(.easeInOut) {
-                        setGame.newGame()
+                    withAnimation(.easeInOut(duration: animationDuration)) {
+                        setGame.resetGame()
                     }
                 }
             }
             .padding()
             .font(.headline)
 
+            // Assignment 3.3
             Grid(setGame.cards) { card in
                 CardView(of: card)
                     .padding(6)
-                    .transition(AnyTransition.offset(x: CGFloat.random(in: -500 ... 500), y: CGFloat.random(in: -500 ... 500)))
+                    .transition(AnyTransition.offset(x: CGFloat.random(in: -1000 ... 1000), y: CGFloat.random(in: -1000 ... 1000)))
                     .onTapGesture {
-                        withAnimation(.easeInOut) {
-                            setGame.select(card: card)
+                        if card.isSelected {
+                            setGame.deselect(card)
+                        } else {
+                            if setGame.numberOfSelectedCards == 3 {
+                                if setGame.hasMatched {
+                                    withAnimation(.easeInOut(duration: animationDuration)) {
+                                        setGame.removeMatched()
+                                        setGame.dealCards(to: 12)
+                                    }
+                                } else {
+                                    setGame.deselectAll()
+                                }
+                            }
+                            setGame.select(card)
                         }
                     }
             }
             .onAppear {
-                withAnimation(.easeInOut(duration: 2)) {
+                // Assignment 3.2
+                withAnimation(.easeInOut(duration: animationDuration)) {
                     setGame.dealCards(to: 12)
                 }
             }
 
-            Button("No Set") {
-                withAnimation(.easeInOut) {
+            // Assignment 3.11
+            Button("Deal 3 More Cards") {
+                withAnimation(.easeInOut(duration: animationDuration)) {
+                    if setGame.hasMatched {
+                        setGame.removeMatched()
+                    }
                     setGame.dealCards(to: setGame.cards.count + 3)
                 }
             }
+            .disabled(setGame.numberOfRemainingCards == 0)
         }
     }
+
+    private let animationDuration: Double = 1.5
 }
 
 struct ContentView_Previews: PreviewProvider {

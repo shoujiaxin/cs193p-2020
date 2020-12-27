@@ -20,8 +20,24 @@ class SetGame: ObservableObject {
         game.cardsInDeck.count
     }
 
+    var numberOfSelectedCards: Int {
+        game.indicesOfSelectedCards.count
+    }
+
+    var hasMatched: Bool {
+        game.cardsOnTable.filter { $0.isMatch == true }.count > 0
+    }
+
     var score: Int {
         game.score
+    }
+
+    func removeMatched() {
+        game.removeMatched()
+    }
+
+    func deselectAll() {
+        game.deselectAll()
     }
 
     // MARK: - Intent(s)
@@ -30,11 +46,15 @@ class SetGame: ObservableObject {
         game.dealCards(to: num)
     }
 
-    func select(card: Card) {
-        game.select(card: card)
+    func select(_ card: Card) {
+        game.select(card)
     }
 
-    func newGame() {
+    func deselect(_ card: Card) {
+        game.deselect(card)
+    }
+
+    func resetGame() {
         game = Game()
         game.dealCards(to: 12)
     }

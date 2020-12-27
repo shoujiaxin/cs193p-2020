@@ -10,9 +10,8 @@ import Foundation
 struct Game {
     private(set) var cardsInDeck: [Card] = []
     private(set) var cardsOnTable: [Card] = []
+    private(set) var indicesOfSelectedCards: Set<Int> = Set()
     private(set) var score: Int = 0
-
-    private var indicesOfSelectedCards: Set<Int> = Set()
 
     init() {
         for numberOfShapes in Card.NumberOfShapes.allCases {
@@ -27,36 +26,53 @@ struct Game {
     }
 
     mutating func dealCards(to num: Int) {
-        while cardsOnTable.count < num {
+        while !cardsInDeck.isEmpty, cardsOnTable.count < num {
             let index = Int.random(in: 0 ..< cardsInDeck.count)
             cardsOnTable.append(cardsInDeck.remove(at: index))
         }
     }
 
-    mutating func select(card: Card) {
-        let index = cardsOnTable.firstIndex(where: { $0.id == card.id })!
-        if card.isSelected {
-            indicesOfSelectedCards.remove(index)
-        } else {
-            indicesOfSelectedCards.insert(index)
+    mutating func removeMatched() {
+        cardsOnTable.removeAll(where: { $0.isMatch == true })
+        indicesOfSelectedCards.removeAll()
+    }
+
+    mutating func deselectAll() {
+        for index in cardsOnTable.indices {
+            cardsOnTable[index].isSelected = false
         }
-        cardsOnTable[index].isSelected.toggle()
+        indicesOfSelectedCards.removeAll()
+    }
 
+    mutating func select(_ card: Card) {
+        let index = cardsOnTable.firstIndex(where: { $0.id == card.id })!
+        cardsOnTable[index].isSelected = true
+
+        indicesOfSelectedCards.insert(index)
         if indicesOfSelectedCards.count == 3 {
-            if checkSet() {
-                score += 1
-                cardsOnTable.removeAll(where: { $0.isSelected })
-                dealCards(to: 12)
-            } else {
-                score -= 1
-                for i in indicesOfSelectedCards {
-                    cardsOnTable[i].isSelected = false
-                }
+            let res = checkSet()
+            for index in indicesOfSelectedCards {
+                cardsOnTable[index].isMatch = res
             }
-
-            indicesOfSelectedCards.removeAll()
         }
     }
+
+    // Assignment 3.8
+    mutating func deselect(_ card: Card) {
+        let index = cardsOnTable.firstIndex(where: { $0.id == card.id })!
+        cardsOnTable[index].isSelected = false
+
+        indicesOfSelectedCards.remove(index)
+        if indicesOfSelectedCards.count < 3 {
+            for index in cardsOnTable.indices {
+                if cardsOnTable[index].isMatch != nil {
+                    cardsOnTable[index].isMatch = nil
+                }
+            }
+        }
+    }
+
+    // MARK: - Private functions
 
     private func checkSet() -> Bool {
         return checkNumberOfShapes() && checkShape() && checkShading() && checkColor()

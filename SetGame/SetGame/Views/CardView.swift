@@ -22,7 +22,7 @@ struct CardView: View {
             }
         }
         .padding()
-        .cardify(isSelected: card.isSelected)
+        .cardify(isSelected: card.isSelected, isMatch: card.isMatch)
         .foregroundColor(card.color.toViewColor())
     }
 }
