@@ -16,7 +16,7 @@ Demos, assignments & notes of Stanford University's course CS193p
 
 - [Lecture 6: Animation](Notes/Lecture%206.md)
 
-- Lecture 7: Multithreading EmojiArt
+- [Lecture 7: Multithreading EmojiArt](Notes/Lecture%207.md)
 
 - Lecture 8: Gestures JSON
 

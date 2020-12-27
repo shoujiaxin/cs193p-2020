@@ -160,3 +160,5 @@ _A container just propagates the `.animation` modifier to all the Views it conta
 ---
 
 ←Previous: [Lecture 5: ViewBuilder Shape ViewModifier](Lecture%205.md)
+
+→Next: [Lecture 7: Multithreading EmojiArt](Lecture%207.md)
