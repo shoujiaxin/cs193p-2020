@@ -114,3 +114,5 @@
 ---
 
 ←Previous: [Lecture 6: Animation](Lecture%206.md)
+
+→Next: [Lecture 8: Gestures JSON](Lecture%208.md)
