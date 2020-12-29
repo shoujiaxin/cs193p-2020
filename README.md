@@ -12,13 +12,13 @@ Demos, assignments & notes of Stanford University's course CS193p
 
 - [Lecture 4: Grid enum Optionals](Notes/Lecture%204.md)
 
-- Lecture 5: ViewBuilder Shape ViewModifier
+- [Lecture 5: ViewBuilder Shape ViewModifier](Notes/Lecture%205.md)
 
-- Lecture 6: Animation
+- [Lecture 6: Animation](Notes/Lecture%206.md)
 
-- Lecture 7: Multithreading EmojiArt
+- [Lecture 7: Multithreading EmojiArt](Notes/Lecture%207.md)
 
-- Lecture 8: Gestures JSON
+- [Lecture 8: Gestures JSON](Notes/Lecture%208.md)
 
 - Lecture 9: Data Flow
 
