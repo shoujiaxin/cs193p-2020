@@ -14,29 +14,14 @@ struct MemoryGameTheme<CardContent>: Codable where CardContent: Codable { // Ass
 
     var numberOfPairsOfCards: Int
 
-    var color: ThemeColor
-
-    enum ThemeColor: String, Codable {
-        case orange
-        case red
-        case green
-        case yellow
-        case pink
-        case blue
-
-        func toColor() -> Color {
-            switch self {
-            case .orange: return .orange
-            case .red: return .red
-            case .green: return .green
-            case .yellow: return .yellow
-            case .pink: return .pink
-            case .blue: return .blue
-            }
-        }
-    }
+    var color: UIColor.RGB
 
     var json: Data? {
         try? JSONEncoder().encode(self)
     }
+}
+
+extension Data {
+    // just a simple converter from a Data to a String
+    var utf8: String? { String(data: self, encoding: .utf8) }
 }

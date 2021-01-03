@@ -13,16 +13,16 @@ class EmojiMemoryGame: ObservableObject {
     static func createMemoryGame() -> MemoryGame<String> {
         // Assignment 2.4, 2.5, 5.1
         var defaultThemes: [MemoryGameTheme<String>] = []
-        defaultThemes.append(MemoryGameTheme<String>(name: "Halloween", contents: ["👻", "🎃", "🕷", "🍬", "💀"], numberOfPairsOfCards: 4, color: .orange))
-        defaultThemes.append(MemoryGameTheme<String>(name: "Christmas", contents: ["🛷", "🎅🏼", "🎄", "🎁", "❄️"], numberOfPairsOfCards: 4, color: .red))
-        defaultThemes.append(MemoryGameTheme<String>(name: "Animals", contents: ["🐱", "🐶", "🐼", "🐵", "🐷"], numberOfPairsOfCards: 4, color: .green))
-        defaultThemes.append(MemoryGameTheme<String>(name: "Food", contents: ["🍎", "🍞", "🍕", "🌭", "🍗", "🍤", "🍩"], numberOfPairsOfCards: 4, color: .yellow))
-        defaultThemes.append(MemoryGameTheme<String>(name: "Objects", contents: ["⌚️", "📱", "💻", "☎️", "📺", "⏱", "🪣"], numberOfPairsOfCards: 4, color: .pink))
-        defaultThemes.append(MemoryGameTheme<String>(name: "Activity", contents: ["⚽️", "🏀", "🏈", "⚾️", "🏓", "🏸", "🛹"], numberOfPairsOfCards: 4, color: .blue))
+        defaultThemes.append(MemoryGameTheme<String>(name: "Halloween", contents: ["👻", "🎃", "🕷", "🍬", "💀"], numberOfPairsOfCards: 4, color: UIColor.systemOrange.rgb))
+        defaultThemes.append(MemoryGameTheme<String>(name: "Christmas", contents: ["🛷", "🎅🏼", "🎄", "🎁", "❄️"], numberOfPairsOfCards: 4, color: UIColor.systemRed.rgb))
+        defaultThemes.append(MemoryGameTheme<String>(name: "Animals", contents: ["🐱", "🐶", "🐼", "🐵", "🐷"], numberOfPairsOfCards: 4, color: UIColor.systemGreen.rgb))
+        defaultThemes.append(MemoryGameTheme<String>(name: "Food", contents: ["🍎", "🍞", "🍕", "🌭", "🍗", "🍤", "🍩"], numberOfPairsOfCards: 4, color: UIColor.systemYellow.rgb))
+        defaultThemes.append(MemoryGameTheme<String>(name: "Objects", contents: ["⌚️", "📱", "💻", "☎️", "📺", "⏱", "🪣"], numberOfPairsOfCards: 4, color: UIColor.systemPink.rgb))
+        defaultThemes.append(MemoryGameTheme<String>(name: "Activity", contents: ["⚽️", "🏀", "🏈", "⚾️", "🏓", "🏸", "🛹"], numberOfPairsOfCards: 4, color: UIColor.systemBlue.rgb))
 
         let theme = defaultThemes.randomElement()!
 
-        print(String(decoding: theme.json!, as: UTF8.self)) // Assignment 5.2
+        print(theme.json?.utf8 ?? "") // Assignment 5.2
 
         return MemoryGame<String>(with: theme)
     }
@@ -38,7 +38,7 @@ class EmojiMemoryGame: ObservableObject {
     }
 
     var themeColor: Color {
-        model.theme?.color.toColor() ?? .accentColor
+        Color(model.theme!.color)
     }
 
     var themeName: String {
