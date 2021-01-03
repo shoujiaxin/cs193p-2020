@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MemoryGame<CardContent> where CardContent: Equatable {
+struct MemoryGame<CardContent> where CardContent: Equatable, CardContent: Codable {
     var cards: [Card] = []
 
     var theme: MemoryGameTheme<CardContent>?
