@@ -8,18 +8,19 @@
 import SwiftUI
 
 class EmojiMemoryGame: ObservableObject {
-    @Published private var model: EmojiMemoryGameTheme = EmojiMemoryGame.createMemoryGame()
+    @Published private var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
 
-    static func createMemoryGame() -> EmojiMemoryGameTheme {
-        let themes: [EmojiMemoryGameTheme] = [
-            EmojiMemoryGameTheme.halloween,
-            EmojiMemoryGameTheme.christmas,
-            EmojiMemoryGameTheme.animals,
-            EmojiMemoryGameTheme.food,
-            EmojiMemoryGameTheme.objects,
-            EmojiMemoryGameTheme.activity,
-        ]
-        return themes.randomElement()!
+    static func createMemoryGame() -> MemoryGame<String> {
+        // Assignment 2.4, 2.5
+        var defaultThemes: [MemoryGameTheme<String>] = []
+        defaultThemes.append(MemoryGameTheme<String>(name: "Halloween", contents: ["👻", "🎃", "🕷", "🍬", "💀"], numberOfPairsOfCards: Int.random(in: 2 ... 5), color: .orange))
+        defaultThemes.append(MemoryGameTheme<String>(name: "Christmas", contents: ["🛷", "🎅🏼", "🎄", "🎁", "❄️"], numberOfPairsOfCards: Int.random(in: 2 ... 5), color: .red))
+        defaultThemes.append(MemoryGameTheme<String>(name: "Animals", contents: ["🐱", "🐶", "🐼", "🐵", "🐷"], numberOfPairsOfCards: Int.random(in: 2 ... 5), color: .green))
+        defaultThemes.append(MemoryGameTheme<String>(name: "Food", contents: ["🍎", "🍞", "🍕", "🌭", "🍗", "🍤", "🍩"], numberOfPairsOfCards: Int.random(in: 2 ... 5), color: .yellow))
+        defaultThemes.append(MemoryGameTheme<String>(name: "Objects", contents: ["⌚️", "📱", "💻", "☎️", "📺", "⏱", "🪣"], numberOfPairsOfCards: Int.random(in: 2 ... 5), color: .pink))
+        defaultThemes.append(MemoryGameTheme<String>(name: "Activity", contents: ["⚽️", "🏀", "🏈", "⚾️", "🏓", "🏸", "🛹"], numberOfPairsOfCards: Int.random(in: 2 ... 5), color: .blue))
+
+        return MemoryGame<String>(with: defaultThemes.randomElement()!)
     }
 
     // MARK: - Access to the Model
@@ -33,17 +34,17 @@ class EmojiMemoryGame: ObservableObject {
     }
 
     var themeColor: Color {
-        model.color
+        model.theme?.color ?? .accentColor
     }
 
     var themeName: String {
-        model.name
+        model.theme?.name ?? ""
     }
 
     // MARK: - Intent(s)
 
     func choose(card: MemoryGame<String>.Card) {
-        model.game.choose(card: card)
+        model.choose(card: card)
     }
 
     func newGame() {

@@ -8,8 +8,11 @@
 import Foundation
 
 struct MemoryGame<CardContent> where CardContent: Equatable {
-    var cards: [Card]
-    var score: Int // Assignment 2.8
+    var cards: [Card] = []
+
+    var theme: MemoryGameTheme<CardContent>?
+
+    var score: Int = 0 // Assignment 2.8
 
     var indexOfTheOneAndOnlyFaceUpCard: Int? {
         get { cards.indices.filter { cards[$0].isFaceUp }.only }
@@ -39,15 +42,20 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     }
 
     init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) {
-        cards = []
-        score = 0
-
         for pairIndex in 0 ..< numberOfPairsOfCards {
             let content = cardContentFactory(pairIndex)
             cards.append(Card(id: pairIndex * 2, content: content))
             cards.append(Card(id: pairIndex * 2 + 1, content: content))
         }
         cards.shuffle() // Assignment 1.2, 2.2
+    }
+
+    init(with theme: MemoryGameTheme<CardContent>) {
+        self.init(numberOfPairsOfCards: theme.numberOfPairsOfCards) { _ in
+            theme.contents[Int.random(in: 0 ..< theme.contents.count)]
+        }
+
+        self.theme = theme
     }
 
     struct Card: Identifiable {
