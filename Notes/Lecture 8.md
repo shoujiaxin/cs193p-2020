@@ -180,3 +180,5 @@ This makes sense only if what you’re doing is related directly to the actual f
 ---
 
 ←Previous: [Lecture 7: Multithreading EmojiArt](Lecture%207.md)
+
+→Next: [Lecture 9: Data Flow](Lecture%209.md)

@@ -20,7 +20,7 @@ Demos, assignments & notes of Stanford University's course CS193p
 
 - [Lecture 8: Gestures JSON](Notes/Lecture%208.md)
 
-- Lecture 9: Data Flow
+- [Lecture 9: Data Flow](Notes/Lecture%209.md)
 
 - Lecture 10: Modal Presentation and Navigation
 
