@@ -16,6 +16,9 @@
 		295D76FC2599804A00C6AADE /* EmojiArtExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295D76FB2599804A00C6AADE /* EmojiArtExtensions.swift */; };
 		295D7706259ADFD000C6AADE /* OptionalImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295D7705259ADFD000C6AADE /* OptionalImage.swift */; };
 		295D770A259B1DAB00C6AADE /* AnimatableSystemFontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295D7709259B1DAB00C6AADE /* AnimatableSystemFontModifier.swift */; };
+		2981E5A925A46B8800DB841C /* PaletteChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981E5A825A46B8800DB841C /* PaletteChooser.swift */; };
+		2981E5AC25A46F5C00DB841C /* EmojiArtDocument+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981E5AB25A46F5B00DB841C /* EmojiArtDocument+Palette.swift */; };
+		29A2A3DB25A3580D00783B69 /* Spinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A2A3DA25A3580D00783B69 /* Spinning.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		295D76FB2599804A00C6AADE /* EmojiArtExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiArtExtensions.swift; sourceTree = "<group>"; };
 		295D7705259ADFD000C6AADE /* OptionalImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalImage.swift; sourceTree = "<group>"; };
 		295D7709259B1DAB00C6AADE /* AnimatableSystemFontModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableSystemFontModifier.swift; sourceTree = "<group>"; };
+		2981E5A825A46B8800DB841C /* PaletteChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteChooser.swift; sourceTree = "<group>"; };
+		2981E5AB25A46F5B00DB841C /* EmojiArtDocument+Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EmojiArtDocument+Palette.swift"; sourceTree = "<group>"; };
+		29A2A3DA25A3580D00783B69 /* Spinning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinning.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,9 @@
 				295D76F82598CE6900C6AADE /* EmojiArt.swift */,
 				295D76FB2599804A00C6AADE /* EmojiArtExtensions.swift */,
 				295D7709259B1DAB00C6AADE /* AnimatableSystemFontModifier.swift */,
+				29A2A3DA25A3580D00783B69 /* Spinning.swift */,
+				2981E5A825A46B8800DB841C /* PaletteChooser.swift */,
+				2981E5AB25A46F5B00DB841C /* EmojiArtDocument+Palette.swift */,
 			);
 			path = EmojiArt;
 			sourceTree = "<group>";
@@ -158,8 +167,11 @@
 				295D76FC2599804A00C6AADE /* EmojiArtExtensions.swift in Sources */,
 				295D76E52598C05200C6AADE /* EmojiArtDocumentView.swift in Sources */,
 				295D7706259ADFD000C6AADE /* OptionalImage.swift in Sources */,
+				2981E5AC25A46F5C00DB841C /* EmojiArtDocument+Palette.swift in Sources */,
 				295D76F42598C74A00C6AADE /* EmojiArtDocument.swift in Sources */,
 				295D76E32598C05200C6AADE /* EmojiArtApp.swift in Sources */,
+				29A2A3DB25A3580D00783B69 /* Spinning.swift in Sources */,
+				2981E5A925A46B8800DB841C /* PaletteChooser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
