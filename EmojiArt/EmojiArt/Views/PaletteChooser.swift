@@ -31,7 +31,7 @@ struct PaletteChooser: View {
 
             Image(systemName: "keyboard")
                 .imageScale(.large)
-                .sheet(isPresented: $showPaletteEditor) {
+                .popover(isPresented: $showPaletteEditor) {
                     PaletteEditor(chosenPalette: $chosenPalette, isShowing: $showPaletteEditor)
                         .frame(minWidth: 300, minHeight: 500)
                         .environmentObject(document)
