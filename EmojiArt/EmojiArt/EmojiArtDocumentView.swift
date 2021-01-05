@@ -11,7 +11,12 @@ import UniformTypeIdentifiers
 struct EmojiArtDocumentView: View {
     @ObservedObject var document: EmojiArtDocument
 
-    @State private var chosenPalette: String = ""
+    @State private var chosenPalette: String
+
+    init(document: EmojiArtDocument) {
+        self.document = document
+        _chosenPalette = State(initialValue: document.defaultPalette)
+    }
 
     var body: some View {
         VStack {
@@ -26,9 +31,6 @@ struct EmojiArtDocumentView: View {
                                 .onDrag { NSItemProvider(object: emoji as NSString) }
                         }
                     }
-                }
-                .onAppear {
-                    chosenPalette = document.defaultPalette
                 }
             }
 
