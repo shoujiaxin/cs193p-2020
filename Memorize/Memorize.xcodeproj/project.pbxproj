@@ -49,6 +49,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29757F8825A5F1EB00B1AEAD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2957FDA62590E0D200E52560 /* Array+Identifiable.swift */,
+				2957FDAB2591D85A00E52560 /* Array+Only.swift */,
+				29A2A3D325A1D8EB00783B69 /* UIColor+RGBA.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		29757F8925A5F1FE00B1AEAD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				29E59B58258CE7A200B27553 /* EmojiMemoryGameView.swift */,
+				2957FDA02590D5B800E52560 /* Grid.swift */,
+				2957FDA32590DAE100E52560 /* GridLayout.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		29757F8A25A5F21500B1AEAD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				29E59B68258DD12100B27553 /* MemoryGame.swift */,
+				2957FDBB2592272C00E52560 /* MemoryGameTheme.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		29757F8B25A5F23400B1AEAD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				29E59B6B258DD33500B27553 /* EmojiMemoryGame.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		29E59B4A258CE7A100B27553 = {
 			isa = PBXGroup;
 			children = (
@@ -69,18 +106,13 @@
 			isa = PBXGroup;
 			children = (
 				29E59B56258CE7A200B27553 /* MemorizeApp.swift */,
-				29E59B58258CE7A200B27553 /* EmojiMemoryGameView.swift */,
-				29E59B6B258DD33500B27553 /* EmojiMemoryGame.swift */,
-				29E59B68258DD12100B27553 /* MemoryGame.swift */,
-				2957FDBB2592272C00E52560 /* MemoryGameTheme.swift */,
+				29757F8A25A5F21500B1AEAD /* Models */,
+				29757F8925A5F1FE00B1AEAD /* Views */,
+				29757F8B25A5F23400B1AEAD /* ViewModels */,
+				29757F8825A5F1EB00B1AEAD /* Utilities */,
 				29E59B5A258CE7A200B27553 /* Assets.xcassets */,
 				29E59B5F258CE7A200B27553 /* Info.plist */,
 				29E59B5C258CE7A200B27553 /* Preview Content */,
-				2957FDA02590D5B800E52560 /* Grid.swift */,
-				2957FDA32590DAE100E52560 /* GridLayout.swift */,
-				2957FDA62590E0D200E52560 /* Array+Identifiable.swift */,
-				2957FDAB2591D85A00E52560 /* Array+Only.swift */,
-				29A2A3D325A1D8EB00783B69 /* UIColor+RGBA.swift */,
 			);
 			path = Memorize;
 			sourceTree = "<group>";
