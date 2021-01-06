@@ -8,23 +8,10 @@
 import SwiftUI
 
 class EmojiMemoryGame: ObservableObject {
-    @Published private var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
+    @Published private var model: MemoryGame<String>
 
-    static func createMemoryGame() -> MemoryGame<String> {
-        // Assignment 2.4, 2.5, 5.1
-        var defaultThemes: [MemoryGameTheme<String>] = []
-        defaultThemes.append(MemoryGameTheme<String>(name: "Halloween", contents: ["👻", "🎃", "🕷", "🍬", "💀"], numberOfPairsOfCards: 4, color: UIColor.systemOrange.rgb))
-        defaultThemes.append(MemoryGameTheme<String>(name: "Christmas", contents: ["🛷", "🎅🏼", "🎄", "🎁", "❄️"], numberOfPairsOfCards: 4, color: UIColor.systemRed.rgb))
-        defaultThemes.append(MemoryGameTheme<String>(name: "Animals", contents: ["🐱", "🐶", "🐼", "🐵", "🐷"], numberOfPairsOfCards: 4, color: UIColor.systemGreen.rgb))
-        defaultThemes.append(MemoryGameTheme<String>(name: "Food", contents: ["🍎", "🍞", "🍕", "🌭", "🍗", "🍤", "🍩"], numberOfPairsOfCards: 4, color: UIColor.systemYellow.rgb))
-        defaultThemes.append(MemoryGameTheme<String>(name: "Objects", contents: ["⌚️", "📱", "💻", "☎️", "📺", "⏱", "🪣"], numberOfPairsOfCards: 4, color: UIColor.systemPink.rgb))
-        defaultThemes.append(MemoryGameTheme<String>(name: "Activity", contents: ["⚽️", "🏀", "🏈", "⚾️", "🏓", "🏸", "🛹"], numberOfPairsOfCards: 4, color: UIColor.systemBlue.rgb))
-
-        let theme = defaultThemes.randomElement()!
-
-        print(theme.json?.utf8 ?? "") // Assignment 5.2
-
-        return MemoryGame<String>(with: theme)
+    init(with theme: MemoryGameTheme<String>) {
+        model = MemoryGame<String>(with: theme)
     }
 
     // MARK: - Access to the Model
@@ -42,7 +29,7 @@ class EmojiMemoryGame: ObservableObject {
     }
 
     var themeName: String {
-        model.theme?.name ?? ""
+        model.theme!.name
     }
 
     // MARK: - Intent(s)
@@ -52,6 +39,6 @@ class EmojiMemoryGame: ObservableObject {
     }
 
     func newGame() {
-        model = EmojiMemoryGame.createMemoryGame()
+        model = MemoryGame<String>(with: model.theme!)
     }
 }

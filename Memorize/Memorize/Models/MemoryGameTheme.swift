@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MemoryGameTheme<CardContent>: Codable where CardContent: Codable { // Assignment 2.3
+struct MemoryGameTheme<CardContent>: Codable, Identifiable where CardContent: Codable { // Assignment 2.3
     var name: String
 
     var contents: [CardContent]
@@ -18,6 +18,24 @@ struct MemoryGameTheme<CardContent>: Codable where CardContent: Codable { // Ass
 
     var json: Data? {
         try? JSONEncoder().encode(self)
+    }
+
+    var id: Int
+
+    init?(json: Data?) {
+        if let json = json, let newTheme = try? JSONDecoder().decode(MemoryGameTheme.self, from: json) {
+            self = newTheme
+        } else {
+            return nil
+        }
+    }
+
+    init(_ name: String, id: Int, contents: [CardContent], numberOfPairsOfCards: Int, color: UIColor.RGB) {
+        self.name = name
+        self.contents = contents
+        self.numberOfPairsOfCards = numberOfPairsOfCards
+        self.color = color
+        self.id = id
     }
 }
 

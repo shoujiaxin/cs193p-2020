@@ -10,19 +10,12 @@ import SwiftUI
 struct EmojiMemoryGameView: View {
     @ObservedObject var viewModel: EmojiMemoryGame
 
+    init(with theme: MemoryGameTheme<String>) {
+        viewModel = EmojiMemoryGame(with: theme)
+    }
+
     var body: some View {
         VStack {
-            HStack {
-                Text("Theme: \(viewModel.themeName)") // Assignment 2.7
-                Spacer()
-                Button(action: { // Assignment 2.6
-                    viewModel.newGame()
-                }, label: {
-                    Text("New Game")
-                })
-            }
-            .padding([.top, .leading, .trailing])
-
             Grid(viewModel.cards) { card in
                 CardView(card: card).onTapGesture {
                     viewModel.choose(card: card)
@@ -34,6 +27,15 @@ struct EmojiMemoryGameView: View {
 
             Text("Score: \(viewModel.score)") // Assignment 2.9
         }
+        .navigationBarTitle(viewModel.themeName) // Assignment 6.5
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarItems(trailing:
+            Button(action: { // Assignment 2.6
+                viewModel.newGame()
+            }, label: {
+                Text("New Game")
+            })
+        )
     }
 }
 
@@ -70,8 +72,8 @@ struct CardView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        EmojiMemoryGameView(viewModel: EmojiMemoryGame())
-    }
-}
+// struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EmojiMemoryGameView(viewModel: EmojiMemoryGame())
+//    }
+// }
