@@ -208,4 +208,4 @@
 
 ←Previous: [Lecture 8: Gestures JSON](Lecture%208.md)
 
-→Next:
+→Next: [Lecture 12: Core Data](Lecture%2012.md)

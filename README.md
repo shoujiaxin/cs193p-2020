@@ -26,7 +26,7 @@ Demos, assignments & notes of Stanford University's course CS193p
 
 - Lecture 11: Enroute Picker
 
-- Lecture 12: Core Data
+- [Lecture 12: Core Data](Notes/Lecture%2012.md)
 
 - Lecture 13: Persistence
 
