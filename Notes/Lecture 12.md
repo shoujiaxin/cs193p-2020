@@ -77,4 +77,4 @@ let flights = try? context.fetch(request)
 
 ←Previous: [Lecture 9: Data Flow](Lecture%209.md)
 
-→Next:
+→Next: [Lecture 13: Persistence](Lecture%2013.md)

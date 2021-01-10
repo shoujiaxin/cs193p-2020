@@ -28,6 +28,6 @@ Demos, assignments & notes of Stanford University's course CS193p
 
 - [Lecture 12: Core Data](Notes/Lecture%2012.md)
 
-- Lecture 13: Persistence
+- [Lecture 13: Persistence](Notes/Lecture%2013.md)
 
 - Lecture 14: UIKit Integration
