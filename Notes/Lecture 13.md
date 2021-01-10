@@ -215,4 +215,4 @@ Storing things in the Unix file system that underlies iOS.
 
 ←Previous: [Lecture 12: Core Data](Lecture%2012.md)
 
-→Next:
+→Next: [Lecture 14: UIKit Integration](Lecture%2014.md)

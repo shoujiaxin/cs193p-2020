@@ -30,4 +30,4 @@ Demos, assignments & notes of Stanford University's course CS193p
 
 - [Lecture 13: Persistence](Notes/Lecture%2013.md)
 
-- Lecture 14: UIKit Integration
+- [Lecture 14: UIKit Integration](Notes/Lecture%2014.md)
