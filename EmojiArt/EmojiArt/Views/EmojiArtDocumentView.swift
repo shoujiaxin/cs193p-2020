@@ -70,14 +70,14 @@ struct EmojiArtDocumentView: View {
                     location = CGPoint(x: location.x / zoomScale, y: location.y / zoomScale)
                     return drop(providres: providers, at: location)
                 }
-                .navigationBarItems(trailing:
+                .navigationBarItems(leading: pickImage, trailing:
                     Button(action: {
                         if UIPasteboard.general.url != nil {
                             confirmBackgroundPaste = true
                         } else {
                             explainBackgroundPaste = true
                         }
-                    }, label: {
+                    }) {
                         Image(systemName: "doc.on.clipboard")
                             .imageScale(.large)
                             .alert(isPresented: $explainBackgroundPaste) {
@@ -87,20 +87,54 @@ struct EmojiArtDocumentView: View {
                                     dismissButton: .default(Text("OK"))
                                 )
                             }
+                    }
+                    .alert(isPresented: $confirmBackgroundPaste) {
+                        Alert(
+                            title: Text("Paste Background"),
+                            message: Text("Replace your background with \(UIPasteboard.general.url?.absoluteString ?? "nothing")?."),
+                            primaryButton: .default(Text("OK")) {
+                                document.backgroundURL = UIPasteboard.general.url
+                            },
+                            secondaryButton: .cancel()
+                        )
                     })
-                        .alert(isPresented: $confirmBackgroundPaste) {
-                            Alert(
-                                title: Text("Paste Background"),
-                                message: Text("Replace your background with \(UIPasteboard.general.url?.absoluteString ?? "nothing")?."),
-                                primaryButton: .default(Text("OK")) {
-                                    document.backgroundURL = UIPasteboard.general.url
-                                },
-                                secondaryButton: .cancel()
-                            )
-                        }
-                )
             }
             .zIndex(-1)
+        }
+    }
+
+    @State private var showImagePicker: Bool = false
+    @State private var imagePickerSourceType: UIImagePickerController.SourceType = .photoLibrary
+
+    private var pickImage: some View {
+        HStack {
+            Image(systemName: "photo")
+                .imageScale(.large)
+                .foregroundColor(.accentColor)
+                .onTapGesture {
+                    self.imagePickerSourceType = .photoLibrary
+                    self.showImagePicker = true
+                }
+
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                Image(systemName: "camera")
+                    .imageScale(.large)
+                    .foregroundColor(.accentColor)
+                    .onTapGesture {
+                        self.imagePickerSourceType = .camera
+                        self.showImagePicker = true
+                    }
+            }
+        }
+        .sheet(isPresented: $showImagePicker) {
+            ImagePicker(sourceType: imagePickerSourceType) { image in
+                if let image = image {
+                    DispatchQueue.main.async {
+                        self.document.backgroundURL = image.storeInFilesystem()
+                    }
+                }
+                self.showImagePicker = false
+            }
         }
     }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2917961625AF380B00023668 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2917961525AF380B00023668 /* ImagePicker.swift */; };
 		2945C38425A48FF600B4B192 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2945C38225A48FF600B4B192 /* Grid.swift */; };
 		2945C38525A48FF600B4B192 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2945C38325A48FF600B4B192 /* GridLayout.swift */; };
 		2945C38925A499EC00B4B192 /* EmojiArtDocumentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2945C38825A499EC00B4B192 /* EmojiArtDocumentStore.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2917961525AF380B00023668 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		2945C38225A48FF600B4B192 /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		2945C38325A48FF600B4B192 /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		2945C38825A499EC00B4B192 /* EmojiArtDocumentStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiArtDocumentStore.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				2945C38225A48FF600B4B192 /* Grid.swift */,
 				2945C38325A48FF600B4B192 /* GridLayout.swift */,
 				2945C3A325A4B3C400B4B192 /* EditableText.swift */,
+				2917961525AF380B00023668 /* ImagePicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				2945C3A425A4B3C400B4B192 /* EditableText.swift in Sources */,
 				2945C38925A499EC00B4B192 /* EmojiArtDocumentStore.swift in Sources */,
 				295D76E32598C05200C6AADE /* EmojiArtApp.swift in Sources */,
+				2917961625AF380B00023668 /* ImagePicker.swift in Sources */,
 				29A2A3DB25A3580D00783B69 /* Spinning.swift in Sources */,
 				2981E5A925A46B8800DB841C /* PaletteChooser.swift in Sources */,
 			);
